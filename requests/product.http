@@ -1,6 +1,10 @@
 @url = http://localhost:5000/api/products
 @contentType = application/json
 
+GET {{url}}/6281e0878bb6494589a3a367 HTTP/1.1
+
+###
+
 GET {{url}} HTTP/1.1
 
 ###
@@ -13,3 +17,19 @@ Content-type: {{contentType}}
     "category": 400.56,
     "imgUrl": "https://m.media-amazon.com/images/I/71eLIuDmIgL._AC_SL1500_.jpg"
 }
+
+###
+
+PUT {{url}}/6281dbe317ef0ea51bff2f5d HTTP/1.1
+Content-type: {{contentType}}
+
+{
+    "name": "laptop HP",
+    "category": 200.5,
+    "imgUrl": "https://m.media-amazon.com/images/I/71eLIuDmIgL._AC_SL1500_.jpg"
+}
+
+
+###
+
+DELETE {{url}}/6281e0878bb6494589a3a367 HTTP/1.1
