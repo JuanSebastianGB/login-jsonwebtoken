@@ -2,10 +2,12 @@ import express, { json, urlencoded } from 'express';
 import morgan from 'morgan';
 import pkg from '../package.json';
 import productRoutes from './routes/product.routes.js';
+import authRoutes from './routes/auth.routes.js';
 import './database';
+import { createRoles } from './libs/initialSetup.js';
 
 const app = express();
-
+createRoles();
 
 app.set('port', 5000);
 app.set('pkg', pkg);
@@ -30,6 +32,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/products', productRoutes);
+app.use('/api/auth', authRoutes);
 
 app.listen(app.get('port'), () => {
     console.log(`Listening on port ${app.get('port')}`);
