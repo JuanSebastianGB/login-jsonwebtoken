@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import pkg from '../package.json';
 import productRoutes from './routes/product.routes.js';
 import authRoutes from './routes/auth.routes.js';
+import userRoutes from './routes/user.routes.js';
 import './database';
 import { createRoles } from './libs/initialSetup.js';
 

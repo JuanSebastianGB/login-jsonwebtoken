@@ -1,5 +1,6 @@
 @url = http://localhost:5000/api/products
 @contentType = application/json
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODQ2ZWQ3ODQxYTFmYzk1ZmVkZTQzNCIsImlhdCI6MTY1Mjg0ODk5NCwiZXhwIjoxNjUyOTM1Mzk0fQ.S39DyuNja78YdL5Z3GFvDA-0eECXvQDZS3iwvQfCJ00
 
 GET {{url}}/6281e0878bb6494589a3a367 HTTP/1.1
 
@@ -11,6 +12,7 @@ GET {{url}} HTTP/1.1
 
 POST {{url}} HTTP/1.1
 Content-type: {{contentType}}
+x-access-token: {{token}}
 
 {
     "name": "laptop lenovo",
@@ -22,6 +24,7 @@ Content-type: {{contentType}}
 
 PUT {{url}}/6281dbe317ef0ea51bff2f5d HTTP/1.1
 Content-type: {{contentType}}
+x-access-token: {{token}}
 
 {
     "name": "laptop HP",
@@ -32,4 +35,5 @@ Content-type: {{contentType}}
 
 ###
 
-DELETE {{url}}/6281e0878bb6494589a3a367 HTTP/1.1
+DELETE {{url}}/62846b454a8a83f930bc9a5d HTTP/1.1
+x-access-token: {{token}}
