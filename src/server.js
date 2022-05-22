@@ -5,10 +5,11 @@ import productRoutes from './routes/product.routes.js';
 import authRoutes from './routes/auth.routes.js';
 import userRoutes from './routes/user.routes.js';
 import './database';
-import { createRoles } from './libs/initialSetup.js';
+import { createRoles, createAdmin } from './libs/initialSetup.js';
 
 const app = express();
 createRoles();
+createAdmin();
 
 app.set('port', 5000);
 app.set('pkg', pkg);
@@ -33,6 +34,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/products', productRoutes);
+app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 
 app.listen(app.get('port'), () => {
