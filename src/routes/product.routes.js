@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import {
-    createProduct,
-    getProducts,
-    getProductById,
-    updateProductById,
-    deleteProductById
+  createProduct,
+  getProducts,
+  getProductById,
+  updateProductById,
+  deleteProductById
 } from '../controllers/product.controller.js';
 import { authJwt } from '../middlewares';
 

@@ -17,20 +17,19 @@ app.use(morgan('dev'));
 app.use(json());
 app.use(urlencoded({ extended: true }));
 
-
 app.get('/', (req, res) => {
-    const {
-        name,
-        version,
-        description,
-        author
-    } = pkg;
-    res.json({
-        name,
-        version,
-        description,
-        author
-    })
+  const {
+    name,
+    version,
+    description,
+    author
+  } = pkg;
+  res.json({
+    name,
+    version,
+    description,
+    author
+  });
 });
 
 app.use('/api/products', productRoutes);
@@ -38,5 +37,5 @@ app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 
 app.listen(app.get('port'), () => {
-    console.log(`Listening on port ${app.get('port')}`);
-})
+  console.log(`Listening on port ${app.get('port')}`);
+});
